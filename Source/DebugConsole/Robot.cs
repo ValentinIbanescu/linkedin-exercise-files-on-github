@@ -19,8 +19,8 @@ namespace DebugConsole
 		// it takes to locate item
 		public int ScanDelay { get; set; }
 		public int ItemCount { get; set; }
-		private string _tabBuffer = "";
-		
+		private string _tabBuffer = "%";
+
 		public void FindGemstones()
 		{
 			for (int counter = 1; counter < ItemCount + 1; counter++)
@@ -40,7 +40,7 @@ namespace DebugConsole
 			Console.ForegroundColor = LaserColor;
 			Console.WriteLine($"{_tabBuffer}{Name} finished: Battery level: {BatteryLevel:N3}, \r\n{_tabBuffer}found {ItemCount} gemstones,  returning to base.");
 		}
-		
+
 		public Robot(string name, int itemCount, double workEfficiency, int scanDelay, ConsoleColor laserColor = ConsoleColor.Green, int outputBuffer= 0)
 		{
 			Name = name;
